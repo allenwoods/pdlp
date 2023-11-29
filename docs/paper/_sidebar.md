@@ -1,0 +1,4 @@
+- [概述](paper/README.md "概述")
+- [社会传感器](paper/1-sensor.md "社会传感器")
+- [建模方法](paper/2-model.md "建模方法")
+- [执行器](paper/3-exector.md "执行器")
