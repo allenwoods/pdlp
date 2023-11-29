@@ -4,5 +4,10 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"[python]": {
+			"editor.insertSpaces": true,
+			"editor.tabSize": 4  
+		  },
+	}
 }
