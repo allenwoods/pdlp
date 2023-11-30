@@ -1,4 +1,4 @@
-import json
+from uuid import uuid4
 from pdlp.style import Style
 from pdlp.shape import Shape
 from dataclasses import dataclass, field
@@ -19,6 +19,8 @@ class Node:
     color: str = 'white'
     connections:list[Edge] = field(default_factory=list)
     
+    def __hash__(self):
+        return hash(f"{self.label}-{uuid4()}")  # 基于节点的标签生成哈希值
 
     def connect(self, node, label="", color="", constraint=True):
         self.connections.append(Edge(self, node, label, color, constraint))

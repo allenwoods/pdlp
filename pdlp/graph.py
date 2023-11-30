@@ -56,3 +56,27 @@ class Graph(Dict[Node, List[Node]]):
         if node not in self or not self[node]:
             return {node.label: []}
         return {node.label: [self._explore_recursive(child) for child in self[node]]}
+
+if __name__ == "__main__":
+    # 创建节点
+    R = Node("Root")
+    A = Node("A")
+    B = Node("B")
+    C = Node("C")
+
+    # 建立连接
+    R.connect(A)
+    R.connect(B)
+    R.connect(C)
+    A.connect(B)
+    A.connect(C)
+    C.connect(A)
+
+    # 构建图
+    nodes = [A, B, C]
+    graph = Graph()
+    for node in nodes:
+        graph[node] = [edge.destination for edge in node.connections]
+    
+    print(graph.root)
+    print(graph.explore_graph())
